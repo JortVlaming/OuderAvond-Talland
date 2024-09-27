@@ -87,4 +87,24 @@ textarea {
     form {
         flex-direction: column !important;
     }
+
+    #coding {
+        flex-direction: column !important;
+    }
+
+    div:has(#htmlInput) {
+        width: 100% !important;
+        height: 75% !important;
+    }
+    
+    div:has(#cssInput) {
+        width: 100% !important;
+        height: 75% !important;
+    }
+
+    #reloadButton {
+        margin-right: 0;
+        padding: 1%;
+        margin: 1%;
+    }
 }
