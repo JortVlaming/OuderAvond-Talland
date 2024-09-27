@@ -82,3 +82,9 @@ textarea {
 #reloadButton {
     margin-right: 10%;
 }
+
+@media screen and (max-width: 768px) {
+    form {
+        flex-direction: column !important;
+    }
+}
