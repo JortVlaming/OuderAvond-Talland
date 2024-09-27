@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouderavond Talland College</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="content">
+        <h1>Ouderavond Talland College</h1>
+        <p>Welkom op de ouder avond van Talland College Software Development.</p>
+        <p>In dit voorbeeld zullen we uitleggen hoe websites werken met gebruik van html en css.</p>
+        <p>Ook kan je zelf html en css schrijven en het resultaat zien veranderen.</p>
+        <div class="seperator-horizontal"></div>
+        <p>Html bestaat voornamelijk uit "elementen" dit zijn objecten die iets laten zien op de web pagina.</p>
+        <p>er zijn verschillende soorten elementen voornamelijk tekst, knoppen, groepen en formulieren</p>
+        <p>Tekst elementen zijn elementen zoals h1, h2, h3, etc voor verschillende soorten headers, p voor paragraven en a for links naar andere paginas/websites</p>
+        <br>
+        <p>Voor meer uitleg over element hebben we een uitleg voorberijd die je kan gebruiken om te leren hoe ze werken.</p>
+        <p>
+            <a href="uitleg.html#tekst">Tekst</a>
+            <span class="hidden">...</span>
+            <a href="uitleg.html#links">links</a>
+            <span class="hidden">...</span>
+            <a href="uitleg.html#knoppen">Knoppen</a>
+            <span class="hidden">...</span>
+            <a href="uitleg.html#groepen">groepen</a></p>
+        <div class="seperator-horizontal"></div>
+    </div>
+
+    <div id="interactive">
+        <h2>Doe het jezelf</h2>
+        <div id="coding">
+            <form id="codingForm">
+                <div class="column">
+                    <h3>HTML</h3>
+                    <textarea name="htmlInput" id="htmlInput"></textarea>
+                </div>
+                <div class="column">
+                    <h3>CSS</h3>
+                    <textarea name="cssInput" id="cssInput"></textarea>
+                </div>
+            </form>
+            <button id="reloadButton">Reload Changes</button>
+        </div>
+        <div class="seperator-horizontal"></div>
+        <h3>Resultaat</h3>
+        <div id="result">
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
