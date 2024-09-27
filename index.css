@@ -13,6 +13,13 @@ body {
     height: 100vh;
 }
 
+.black-nochange {
+    color: black !important;
+}
+.blue-nochange {
+    color: blue !important;
+}
+
 #content {
     width: 100%;
 }
