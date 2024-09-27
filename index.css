@@ -93,12 +93,12 @@ textarea {
     }
 
     div:has(#htmlInput) {
-        width: 100% !important;
+        width: 95% !important;
         height: 75% !important;
     }
     
     div:has(#cssInput) {
-        width: 100% !important;
+        width: 95% !important;
         height: 75% !important;
     }
 
