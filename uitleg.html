@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hulpbronnen html/css</title>
+    <link rel="stylesheet" href="css/uitleg.css">
+</head>
+<body>
+    <div id="content">
+        <div id="basic_html">
+            <h2>Basic HTML</h2>
+            <p>HTML bestaat uit verschillende elementen, elementen bestaan uit 3 delen, de opening, de content en de sluiting</p>
+            <p>Om een element te maken moet je beginnen met <span class="highlighted">&lt;p&gt;</span> in de binnenkant van de <span class="highlighted"><></span> bepaal je welk element je maakt</p>
+            <p>Om een element te sluiten moet je aan het einde <span class="highlighted">&lt;/p&gt;</span> toevoegen met weer in de binnenkant van de <span class="highlighted"><></span> de het element naam met een <span class="highlighted">/</span> ervoor voor sluiten</p>
+            <p>Dus om een p element te maken om tekst te laten zien zou je <span class="highlighted">&lt;p&gt;tekst in het p element&lt;/p&gt;</span> plaatsen</p>
+        </div>
+
+        <div class="seperator-horizontal"></div>
+        
+        <div id="basic_css">
+            <h2>Basic css</h2>
+            <p>CSS gebruik je om attributen op HTML elementen te veranderen.</p>
+            <p>Om dat te doen heb je in CSS selectors, selectors zijn: element, class en id</p>
+            <p>Voor class en id moet je in HTML elementen een extra waarde toevoegen</p>
+            <p>dit doe je binnen de opening van het element doormiddel van <span class="highlighted">class=""</span> en <span class="highlighted">id=""</span></p>
+            <p>het id waarde moet uniek zijn en kan maar op een element, de class waarde kan op meerdere elementen.</p>
+            <br>
+            <p>Om met deze waardes in CSS de elementen te selecteren heb je verschillende manieren maar de belangerijkste zijn dit:</p>
+            <p><span class="highlighted">p {}</span> selecteert alle p elementen in je HTML</p>
+            <p><span class="highlighted">.class {}</span> selecteert alle elementen met een class en begint met een <span class="highlighted">.</span></p>
+            <p><span class="highlighted">#id {}</span> selecteert het element met het id en begint met een <span class="highlighted">#</span></p>
+        </div>
+        
+        <div class="seperator-horizontal"></div>
+
+        <div id="tekst">
+            <h2>Tekst</h2>
+            <p>Tekst elementen zijn simpele elementen die alleen tekst laten zien.</p>
+            <p>Er zijn voornamelijk 3 soorten tekst elementen: headers, paragraphs, span en links</p>
+            <br>
+            <p>Zie hieronder voor de soorten tekst elementen:</p>
+            <h1>&lt;h1&gt; Header 1</h1>
+            <h2>&lt;h2&gt; Header 2</h2>
+            <h3>&lt;h3&gt; Header 3</h3>
+            <h4>&lt;h4&gt; Header 4</h4>
+            <h5>&lt;h5&gt; Header 5</h5>
+            <h6>&lt;h6&gt; Header 6</h6>
+            <p>&lt;p&gt; Paragraph</p>
+            <p>&lt;span&gt; Span</p>
+            <a href="#tekst">&lt;a href="#"&gt; linkjes</a>
+            <br><br>
+            <p>Span elementen zijn speciale elementen die je in het midden van je tekst kan toevoegen om een stuk van je tekst te stylen</p>
+            <p>Bijvoorbeeld <span class="highlighted">&lt;span class="voorbeeld"&gt;Ik zit in een span!&lt;/span&gt;</span> wordt <span class="voorbeeld_span">Ik zit in een span!</span> zonder dat er extra tekst elementen toe te voegen</p>
+        </div>
+
+        <div class="seperator-horizontal"></div>
+
+        <div id="links">
+            <h2>linkjes</h2>
+            <p>Linkjes bestaan voornamelijk uit maar 1 element maar er zijn wel veel manieren om het uiterlijk van linkjes te veranderen met behulp van CSS</p>
+            <p>Linkjest bestaan uit <span class="highlighted">&lt;a&gt;</span> elementen met een belangrijk verschil van normale tekst elementen.</p>
+            <p><span class="highlighted">&lt;a&gt;</span> elementen hebben een verplichte extra waarde nodig genaamd de <span class="highlighted">href</span></p>
+            <p>De <span class="highlighted">href</span> waarde is de link waarnaar de pagine wordt veranderd als je erop klikt</p>
+            <p>De <span class="highlighted">href</span> waarde kan je bepalen doormiddel van <span class="highlighted">href=""</span> binnen &lt;a&gt; dus <span class="highlighted">&lt;a href="#"&gt;</span></p>
+            <p>De tekst binnen <span class="highlighted">&lt;a href="#"&gt;&lt;/a&gt;</span> is de tekst die zichtbaar zal zijn voor de gebruiker</p>
+            <p>Bijvoorbeeld: <span class="highlighted">&lt;a href="https://youtube.com"&gt;Youtube&lt;/a&gt;</span> word <a href="https://youtube.com">Youtube</a></p>
+            <br>
+            <p>Standaard zijn linkjes blauw met een underline maar dat kan je met behulp van CSS veranderen</p>
+            <p>Om de kleur van linkjes te veranderen gebruik je het <span class="highlighted">color</span> attribuut</p>
+            <p>Om de underline van linkjes te verwijderen/veranderen gebruik je het <span class="highlighted">text-decoration</span> attribuut</p>
+        </div>
+    </div>
+</body>
+</html>
