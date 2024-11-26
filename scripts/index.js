@@ -6,7 +6,7 @@ const jsInput = document.getElementById("jsInput");
 const exerciseText = document.getElementById("exercise");
 const resultFrame = document.getElementById("result").contentDocument;
 
-const server = "ws://192.168.2.213:5001";
+const server = "ws://192.168.0.96:5001";
 
 let websocket;
 let permissionGranted = false;
@@ -77,7 +77,6 @@ function startWebSocket() {
         const data = JSON.parse(event.data);
         if (data.type === "start") {
             permissionGranted = true;
-            localStorage.setItem("permissionGranted", "true");
             removePopup();
             displayPacketOptions(packet_options);
         } else if (data.type === "packets") {
@@ -88,6 +87,16 @@ function startWebSocket() {
             exerciseManager.exerciseCount = data.packet.length;
             exerciseManager.currentExercise = 1;
             exerciseManager.updateExerciseText();
+            document.getElementById("interactive").style.display = prevDisplay;
+        } else if (data.type === "error") {
+            console.error("Error from server:", data.message);
+        } else if (data.type === "validation_result") {
+            if (data.valid) {
+                console.log(`Exercise ${data.exercise_id} passed validation!`);
+                exerciseManager.advanceExercise();
+            } else {
+                console.error(`Exercise ${data.exercise_id} failed validation.`);
+            }
         } else if (data.type === "error") {
             console.error("Error from server:", data.message);
         }
@@ -98,17 +107,29 @@ function startWebSocket() {
     };
 }
 
+let currentPacket;
+
 function displayPacketOptions(packets) {
     const packetSelector = document.createElement("div");
     packetSelector.id = "packetSelector";
+    packetSelector.style.display = "flex";
+    packetSelector.style.flexDirection = "row";
+    packetSelector.style.justifyContent = "center";
+    packetSelector.style.width = "100%";
+    packetSelector.style.gap = "10px";
+
+    packetSelector.style.marginTop = "100px";
 
     packets.forEach((packet) => {
         const button = document.createElement("button");
         button.innerText = packet;
         button.onclick = () => {
             websocket.send(JSON.stringify({ type: "choose_packet", packet: packet }));
+            currentPacket = packet;
             packetSelector.remove();
         };
+        button.style.width = "250px";
+        button.style.height = "250px";
         packetSelector.appendChild(button);
     });
 
@@ -117,7 +138,17 @@ function displayPacketOptions(packets) {
 
 reload.addEventListener("click", () => {
     const resultCode = `
-        <style>${cssInput.value}</style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+            
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            ${cssInput.value}
+        </style>
         ${htmlInput.value}
         <script>${jsInput.value}<\/script>
     `;
@@ -128,20 +159,22 @@ reload.addEventListener("click", () => {
         iframeDoc.close();
 
         const currentExercise = exerciseManager.getCurrentExercise();
-        if (currentExercise && currentExercise.validator(htmlInput.value)) {
-            exerciseManager.advanceExercise();
+        if (currentExercise) {
+            // Send validation request to the server
+            websocket.send(JSON.stringify({
+                type: "validate",
+                packet: currentPacket,
+                exercise_id: currentExercise.id,
+                html: htmlInput.value
+            }));
         }
     } catch (error) {
         console.error("Error rendering user content:", error);
     }
 });
 
-// Check if permission was granted previously
-if (localStorage.getItem("permissionGranted") === "true") {
-    permissionGranted = true;
-    removePopup(); // Remove the waiting popup if permission was granted before
-    startWebSocket(); // Establish WebSocket connection
-} else {
-    showPopup("Waiting for server permission...");
-    startWebSocket(); // Establish WebSocket connection
-}
+let prevDisplay = document.getElementById("interactive").style.display;
+document.getElementById("interactive").style.display = "none";
+
+showPopup("Waiting for server permission...");
+startWebSocket(); // Establish WebSocket connection
