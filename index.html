@@ -6,59 +6,59 @@
     <title>Ouderavond Talland College</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
-    <div id="content">
-        <h1 class="black-nochange">Ouderavond Talland College</h1>
-        <p class="black-nochange">Welkom op de ouder avond van Talland College Software Development.</p>
-        <p class="black-nochange">In dit voorbeeld zullen we uitleggen hoe websites werken met gebruik van html en css.</p>
-        <p class="black-nochange">Ook kan je zelf html en css schrijven en het resultaat zien veranderen.</p>
-        <div class="seperator-horizontal"></div>
-        <p class="black-nochange">Html bestaat voornamelijk uit "elementen" dit zijn objecten die iets laten zien op de web pagina.</p>
-        <p class="black-nochange">er zijn verschillende soorten elementen voornamelijk tekst, knoppen, groepen en formulieren</p>
-        <p class="black-nochange">Tekst elementen zijn elementen zoals h1, h2, h3, etc voor verschillende soorten headers, p voor paragraven en a for links naar andere paginas/websites</p>
-        <br>
-        <p class="black-nochange">Voor meer uitleg over element hebben we een uitleg voorbereid die je kan gebruiken om te leren hoe ze werken.</p>
-        <p class="blue-nochange">
-            <a target="_blank" href="uitleg.html#basic_html">Basis HTML</a>
-            <span class="hidden">...</span>
-            <a target="_blank" href="uitleg.html#basic_css">Basis CSS</a>
-            <span class="hidden">...</span>
-            <a target="_blank" href="uitleg.html#tekst">Tekst</a>
-            <span class="hidden">...</span>
-            <a target="_blank" href="uitleg.html#links">links</a>
-            <span class="hidden">...</span>
-            <a target="_blank" href="uitleg.html#groepen">groepen</a>
-            <span class="hidden">...</span>
-            <a target="_blank" href="uitleg.html#lijsten">lijsten</a></p></p>
+<body class="bg-white-nochange">
+<div id="content">
+    <h1 class="black-nochange">Ouderavond Talland College</h1>
+    <p class="black-nochange">Welkom op de ouder avond van Talland College Software Development.</p>
+    <p class="black-nochange">In dit voorbeeld zullen we uitleggen hoe websites werken met gebruik van html en css.</p>
+    <p class="black-nochange">Ook kan je zelf html en css schrijven en het resultaat zien veranderen.</p>
+    <div class="seperator-horizontal"></div>
+    <p class="black-nochange">Html bestaat voornamelijk uit "elementen" dit zijn objecten die iets laten zien op de web pagina.</p>
+    <p class="black-nochange">Er zijn verschillende soorten elementen voornamelijk tekst, knoppen, groepen en formulieren</p>
+    <p class="black-nochange">Tekst elementen zijn elementen zoals h1, h2, h3, etc voor verschillende soorten headers, p voor paragraven en a voor links naar andere paginas/websites</p>
+    <br>
+    <p class="black-nochange">Voor meer uitleg over element hebben we een uitleg voorbereid die je kan gebruiken om te leren hoe ze werken.</p>
+    <p class="blue-nochange">
+        <a target="_blank" href="uitleg.html#basic_html">Basis HTML</a>
+        <span class="hidden">...</span>
+        <a target="_blank" href="uitleg.html#basic_css">Basis CSS</a>
+        <span class="hidden">...</span>
+        <a target="_blank" href="uitleg.html#tekst">Tekst</a>
+        <span class="hidden">...</span>
+        <a target="_blank" href="uitleg.html#links">Links</a>
+        <span class="hidden">...</span>
+        <a target="_blank" href="uitleg.html#groepen">Groepen</a>
+        <span class="hidden">...</span>
+        <a target="_blank" href="uitleg.html#lijsten">Lijsten</a>
+    </p>
+    <div class="seperator-horizontal"></div>
+</div>
 
-        <div class="seperator-horizontal"></div>
+<div id="interactive">
+    <h2 class="black-nochange">Doe het zelf</h2>
+    <h3 id="exercise">0/0 loading</h3>
+    <div id="coding">
+        <form id="codingForm">
+            <div class="column">
+                <h3 class="black-nochange">HTML</h3>
+                <textarea name="htmlInput" id="htmlInput"></textarea>
+            </div>
+            <div class="column">
+                <h3 class="black-nochange">CSS</h3>
+                <textarea name="cssInput" id="cssInput"></textarea>
+            </div>
+            <div class="column">
+                <h3 class="black-nochange">JS</h3>
+                <textarea name="jsInput" id="jsInput"></textarea>
+            </div>
+        </form>
+        <button id="reloadButton">Reload Changes</button>
     </div>
+    <div class="seperator-horizontal"></div>
+    <h3>Resultaat</h3>
+    <iframe id="result" sandbox="allow-scripts allow-same-origin"></iframe>
+</div>
 
-    <div id="interactive">
-        <h2 class="black-nochange">Doe het jezelf</h2>
-        <h3 id="exercise">0/0 code not loaded please hold</h3>
-        <div id="coding">
-            <form id="codingForm">
-                <div class="column">
-                    <h3 class="black-nochange">HTML</h3>
-                    <textarea name="htmlInput" id="htmlInput">
-                    </textarea>
-                </div>
-                <div class="column">
-                    <h3 class="black-nochange">CSS</h3>
-                    <textarea name="cssInput" id="cssInput">
-                    </textarea>
-                </div>
-            </form>
-            <button id="reloadButton">Reload Changes</button>
-        </div>
-        <div class="seperator-horizontal"></div>
-        <h3>Resultaat</h3>
-        <div id="result">
-
-        </div>
-    </div>
-
-    <script src="scripts/index.js"></script>
+<script src="scripts/index.js"></script>
 </body>
 </html>
