@@ -6,7 +6,7 @@ const jsInput = document.getElementById("jsInput");
 const exerciseText = document.getElementById("exercise");
 const resultFrame = document.getElementById("result").contentDocument;
 
-const server = "ws://192.168.0.96:5001";
+const server = "ws://192.168.2.213:5001";
 
 let websocket;
 let permissionGranted = false;
@@ -165,7 +165,9 @@ reload.addEventListener("click", () => {
                 type: "validate",
                 packet: currentPacket,
                 exercise_id: currentExercise.id,
-                html: htmlInput.value
+                html: htmlInput.value,
+                css: cssInput.value,
+                js: jsInput.value
             }));
         }
     } catch (error) {
