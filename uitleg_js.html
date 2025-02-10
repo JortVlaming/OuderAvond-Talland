@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hulpbronnen Javascript</title>
+    <link rel="stylesheet" href="css/uitleg.css">
+</head>
+<body>
+    <div id="content">
+        <div id="basic_js">
+            <h2>Basis JavaScript</h2>
+            <p>JavaScript is een programmeertaal die wordt gebruikt om functie te geven aan webpagina's</p>
+        </div>
+
+        <div class="seperator-horizontal"></div>
+
+        <div id="knoppen">
+            <h2>Knoppen</h2>
+            <p>Knoppen zijn elementen die wanneer er op wordt geclicked een functie in javascript kan activeren</p>
+            <p>Knoppen bestaan uit <span class="highlighted">&lt;button&gt;</span> elementen</p>
+            <p>Om de functie te bepalen die de knop activeerd wordt de attribute <span class="highlighted">onclick=""</span> gebruikt</p>
+            <br>
+            <p>Bijvoorbeeld: <span class="highlighted">&lt;button onclick="voorbeeld()"&gt;Ik ben een knop!&lt;/button&gt;</span> word <button onclick="voorbeeld_knop()">Ik ben een knop!</button></p>
+            <p>En met een beetje code kan je deze tekst veranderen als je op de knop klikt</p>
+            <h4 id="knop_voorbeeld_tekst">Ik wordt veranderd!</h4>
+        </div>
+
+        <div class="seperator-horizontal"></div>
+
+        <div id="functions">
+            <h2>Functions</h2>
+            <p>Functions zijn bedoeld om een code te schrijven en die in 1 keer aan te roepen. Functions hebben
+                parameters nodig die zet je tussen de ()</p>
+            <p>Parameters zijn de variavblen die je meegeeft als je de functie aan roept</p>
+            <p> Je maakt een function door: <span class="highlighted">function "naam van de functio" (Parameter){}</span>, en je roept een functie aan door: Functie naam(variablen die je als parameter wilt gebruiken).</p>
+        </div>
+            <p>Je moet met js als je (bijvoorbeeld knoppen gebruikt) elementen aanspreken op een manier.</p>
+            <p>Deze manier gaat als volgt: <span class="highlighted">document.getElementById("id");</span>.</p>
+            <p>Als je wilt dat deze knop een kleur krijgt als je er op klikt moet je: <span class="highlighted">.style.backgroundColor="kleur"</span> er nog achter zetten. </p>
+            <p>En als je een datum zou willen ophalen zou je: <span class="highlighted">.innerHTML = date();</span> kunnen gerbuiken. </p>
+        </div>
+
+        <script src="scripts/uitleg.js"></script>
+    </div>
+</body>
+</html>
